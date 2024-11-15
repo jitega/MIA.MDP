@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="app.js" defer></script>
+</head>
+<body>
+  <nav id="sidebar">
+    <ul>
+      <li>
+        <span class="logo">MIA MDP</span>
+        <button onclick=toggleSidebar() id="toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+        </button>
+      </li>
+      <li class="active">
+        <a href="index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/></svg>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#campus">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-640v-160q0-17 11.5-28.5T560-840h240q17 0 28.5 11.5T840-800v160q0 17-11.5 28.5T800-600H560q-17 0-28.5-11.5T520-640ZM120-480v-320q0-17 11.5-28.5T160-840h240q17 0 28.5 11.5T440-800v320q0 17-11.5 28.5T400-440H160q-17 0-28.5-11.5T120-480Zm400 320v-320q0-17 11.5-28.5T560-520h240q17 0 28.5 11.5T840-480v320q0 17-11.5 28.5T800-120H560q-17 0-28.5-11.5T520-160Zm-400 0v-160q0-17 11.5-28.5T160-360h240q17 0 28.5 11.5T440-320v160q0 17-11.5 28.5T400-120H160q-17 0-28.5-11.5T120-160Zm80-360h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+          <span>Campus</span>
+        </a>
+      </li>
+      <li>
+        <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"/>
+          </svg>
+          <span href="#course">Course</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/>
+          </svg>
+        </button>
+        <ul class="sub-menu">
+          <div>
+            <li><a href="#course">Pre-School</a></li>
+            <li><a href="#course">Matric</a></li>
+            <li><a href="#course">Intermediate</a></li>
+          </div>
+        </ul>
+      </li>
+      
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m221-313 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-228q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm0-320 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-548q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm339 353q-17 0-28.5-11.5T520-320q0-17 11.5-28.5T560-360h280q17 0 28.5 11.5T880-320q0 17-11.5 28.5T840-280H560Zm0-320q-17 0-28.5-11.5T520-640q0-17 11.5-28.5T560-680h280q17 0 28.5 11.5T880-640q0 17-11.5 28.5T840-600H560Z"/></svg>
+          <span>Contact</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+          <div>
+            <li><a href="#about">E-mail</a></li>
+            <li><a href="#about">Phone</a></li>
+            <li><a href="#about">Whatsapp</a></li>
+          </div>
+        </ul>
+      </li>
+      <li>
+        <a href="#facilities">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed">
+            <path d="M12 2C11.45 2 11 2.45 11 3V5H8C7.45 5 7 5.45 7 6V21H4C3.45 21 3 21.45 3 22H21C21 21.45 20.55 21 20 21H17V6C17 5.45 16.55 5 16 5H13V3C13 2.45 12.55 2 12 2zM13 9H15V11H13V9zM13 13H15V15H13V13zM13 17H15V19H13V17zM9 9H11V11H9V9zM9 13H11V15H9V13zM9 17H11V19H9V17zM5 9H7V19H5V9zM17 19H19V9H17V19z"/>
+          </svg>
+          
+          <span>Facilities</span>
+        </a>
+      </li>
+      <li>
+        <a href="#cta">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Zm80 0h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
+          <span>About</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <section class="header">
+      <nav>
+        <a href="index.html">
+          <img src="image/log.png" alt="MIA Logo" class="logo">
+        </a>
+        <h4>MOTHER'S INTERNATIONAL ACADEMY</h4>
+      </nav>
+      <div class="text-box">
+        <h1>Madhupur Biggest School</h1>
+        <a href="" class="hero-btn">Visit Us to Know More</a>
+      </div>
+    </section>
+    <section id="course" class="course">
+      <h1>Course We Offer</h1>
+      <p>WelCome to visit mother's international Academy</p>
+
+      <div class="row">
+          <div class="course-col">
+              <h3>Pre-School</h3>
+              <p>Fun and engaging early learning programs for kids, focusing on play, creativity, and social
+                  interaction.</p>
+          </div>
+          <div class="course-col">
+              <h3>Primary School (Grade 1-5)</h3>
+              <p>Building a strong foundation in core subjects like Mathematics, Science, and Language, with emphasis
+                  on holistic development.</p>
+          </div>
+          <div class="course-col">
+              <h3>Middle School (Grade 6-8)</h3>
+              <p>Expanding knowledge in various subjects, introducing practical and project-based learning to
+                  encourage critical thinking and problem-solving.</p>
+          </div>
+          <div class="course-col">
+              <h3>High School (Grade 9-10)</h3>
+              <p>Preparing students for board exams with comprehensive coverage of Science, Mathematics, Social
+                  Studies, and Languages. Career counseling support is also provided.</p>
+          </div>
+          <div class="course-col">
+              <h3>Senior Secondary (Grade 11-12)</h3>
+              <p>Offering specialized streams like Science, Commerce, and Arts, helping students to focus on their
+                  career goals with advanced learning techniques and preparation for competitive exams.</p>
+          </div>
+      </div>
+
+  </section>
+
+  <section id="campus" class="campus">
+      <h1>Explore Our Vibrant Campus</h1>
+      <p>Experience a world of learning, growth, and endless possibilities. Visit us and discover what makes our
+          campus extraordinary!</p>
+
+      <div class="row">
+          <div class="campus-col">
+              <img src="image/f1.heic" alt="" srcset="">
+              <div class="layer">
+                  <h1>Fest</h1>
+              </div>
+          </div>
+          <div class="campus-col">
+              <img src="image/s3.heic" alt="" srcset="">
+              <div class="layer">
+                  <h1>Yoga</h1>
+              </div>
+          </div>
+          <div class="campus-col">
+              <img src="image/s1.heic" alt="" srcset="">
+              <div class="layer">
+                  <h1>Pray Ground</h1>
+              </div>
+          </div>
+
+      </div>
+
+  </section>
+
+  <section id="facilities" class="facilities">
+      <h1>Explore Our Top-Class Facilities</h1>
+      <p>Discover the wide range of top-tier amenities designed to support every stage of learning. From preschool to
+          grade 12, our facilities are built to enhance the educational experience and foster personal growth.</p>
+
+      <div class="row">
+          <div class="facilities-col">
+              <img src="image/fg.png" alt="Preschool Facilities" srcset="">
+              <h3>Ground</h3>
+              <p>Our state-of-the-art Football Ground offers ample space for both casual play and competitive matches.
+                  With well-maintained grass and professional-grade facilities, the ground provides an excellent
+                  environment for students to engage in physical activity and enhance their athletic skills. Whether
+                  it's a friendly game with friends or a school tournament, the football ground is the perfect place
+                  to foster teamwork, discipline, and sportsmanship.</p>
+
+          </div>
+          <div class="facilities-col">
+              <img src="image/kidG.png" alt="Classroom Facilities" srcset="">
+              <h3>Kids Ground</h3>
+              <p>Our Kids' Ground is a safe and exciting space where young minds can explore, play, and grow. With a
+                  variety of outdoor equipment designed to enhance physical and social development, children can enjoy
+                  hours of fun while developing coordination and teamwork skills. The play area is designed with the
+                  highest safety standards in mind, ensuring a joyful and secure environment for all our little
+                  explorers.</p>
+
+          </div>
+          <div class="facilities-col">
+              <img src="image/lib.png" alt="Library Facilities" srcset="">
+              <h3>library</h3>
+              <p>The Library is a peaceful haven for students to immerse themselves in the world of books and
+                  knowledge. With a vast collection of fiction, non-fiction, and educational materials, it serves as a
+                  valuable resource for both learning and leisure reading. The spacious, quiet atmosphere encourages
+                  focused study, while the comfortable seating areas invite students to relax with a good book. Our
+                  library is not just a place for books—it's a space where imagination and learning come together.</p>
+
+          </div>
+          <!-- <div class="facilities-col">
+              <img src="image/science-lab.png" alt="Science Lab Facilities" srcset="">
+              <div class="layer">
+                  <h1>Science Labs</h1>
+              </div>
+          </div>
+          <div class="facilities-col">
+              <img src="image/sports.png" alt="Sports Facilities" srcset="">
+              <div class="layer">
+                  <h1>Sports</h1>
+              </div>
+          </div>
+          <div class="facilities-col">
+              <img src="image/art-music.png" alt="Art and Music Facilities" srcset="">
+              <div class="layer">
+                  <h1>Art & Music</h1>
+              </div>
+          </div> -->
+      </div>
+  </section>
+
+  <section class="testimonials">
+      <h1>What Our Students Says</h1>
+      <p>About Our School</p>
+
+      <div class="row">
+          <div class="testimonial-col">
+              <img src="image/gautam.jpg" alt="User 1">
+              <div>
+                  <p>As a student of MIA, I couldn't be happier with the choice of Mother's International Academy for
+                      my
+                      child's education. The school offers a perfect balance of academics, extracurricular activities,
+                      and personal development. The teachers are highly skilled and approachable, always ready to
+                      provide individual attention to students. The school's emphasis on character building, along
+                      with its modern amenities and well-rounded curriculum, gives me confidence that my child is
+                      receiving the best possible education and preparing for future success. It's more than just a
+                      school—it's a place where children are encouraged to explore their passions and grow into
+                      responsible individuals.</p>
+
+                  <h3>Gautam Raja</h3>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa-regular fa-star" style="color: #f44336;"></i>
+              </div>
+          </div>
+          <div class="testimonial-col">
+              <img src="image/ratan.png" alt="User 2">
+              <div>
+                  <p>Mother's International Academy in Madhupur stands as a beacon of excellence in education. With a
+                      dedicated team of passionate educators and state-of-the-art facilities, the school provides a
+                      nurturing environment that fosters both academic and personal growth. The focus on holistic
+                      development ensures that students not only excel in their studies but also develop essential
+                      life skills, including leadership, teamwork, and creativity. The supportive atmosphere
+                      encourages every child to reach their full potential, making it a top choice for families
+                      seeking quality education.</p>
+
+                  <h3>Ratan</h3>
+
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke" style="color: #f44336;"></i>
+
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <section id="cta" class="cta">
+      <h1>Enroll for our course</h1>
+      <a href="" class="hero-btn">Contact Us</a>
+
+  </section>
+
+  <section class="footer">
+      <h4>About Us</h4>
+      <p>Mother's International Academy, located in Madhupur, Deoghar, Jharkhand, is a prestigious educational
+          institution known for its commitment to nurturing young minds and fostering holistic development.
+          Established with the vision to provide quality education, the academy blends traditional values with modern
+          learning methodologies. It offers a wide range of academic programs from preschool to senior secondary,
+          aiming to cultivate a strong foundation in academics, sports, and extracurricular activities.</p>
+
+      <p>The school’s state-of-the-art infrastructure, including spacious classrooms, well-equipped laboratories, a
+          dedicated library, and expansive playgrounds, creates an ideal environment for learning and personal growth.
+          With a team of highly skilled and passionate educators, Mother's International Academy focuses on developing
+          the intellectual, emotional, and physical well-being of its students. Beyond academics, the school
+          emphasizes the importance of character building, leadership, and creativity, ensuring that every student is
+          prepared to excel in the competitive world. It has become a beacon of excellence in education, attracting
+          families from across the region seeking the best for their children's future.</p>
+
+      <div class="footer-brand">
+
+          <a href="#" class="logo">
+              <img src="image/log.png" alt="Footcap logo">
+          </a>
+          <p class="footer-list-title" style="font-weight: 600; font-size: 35px;">Newsletter</p>
+          <img src="image/new.jpg" alt="">
+          <p class="newsletter-text">
+              Authoritatively morph 24/7 potentialities with error-free partnerships.
+          </p>
+
+          <ul class="social-list">
+
+              <li>
+                  <a href="https://www.instagram.com/mothersinternationalacademy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                      class="social-link">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="https://www.facebook.com/mia.madhupur/" class="social-link">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="https://www.youtube.com/@mothersinternationalacadem2335" class="social-link">
+                      <ion-icon name="logo-youtube"></ion-icon>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="https://www.linkedin.com/company/s8ul/?originalSubdomain=in" class="social-link">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+              </li>
+
+          </ul>
+
+      </div>
+      <div></div>
+  </section>
+  <section id="about" class="contact">
+
+      <h1>Contact Us</h1>
+      <div class="contact-info">
+          <div class="info-item">
+              <h3>Address</h3>
+              <a
+                  href="https://l.instagram.com/?u=https%3A%2F%2Fmaps.app.goo.gl%2Fu54xAFeNdF5LXTQN8%3Fg_st%3Dic%26fbclid%3DPAZXh0bgNhZW0CMTEAAaaMJizwaIiIpPJho9sM2QxDOdRYoGJLscuLw7NbI4Tz8AHigjgTdmP8Y80_aem_HQE1mHIayEjsecYSkc9pKg&e=AT3Se5N3emAxPq0oAQmyfNHTVI-oMwXe8NDwno9feAEzSq5zIH52HKhvapuli-TP9gBN0ePqcJNVnBCzkzbu4FzY82AnYk2CVYwg8bc">
+                  <ion-icon name="location"></ion-icon>
+              </a>
+              <p>Kundu Bunglow Road Madhupur</p>
+          </div>
+          <div class="info-item">
+              <h3>Phone</h3>
+              <p>7004896934 / 9470132615</p>
+          </div>
+          <div class="info-item">
+              <h3>Email</h3>
+              <p><a href="mailto:miamdp@ymail.com">miamdp@ymail.com</a></p>
+          </div>
+      </div>
+      <p>Copyright © 2023 Mother's International Academy. All rights reserved.</p>
+
+  </section>
+  </main>
+</body>
+</html>
